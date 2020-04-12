@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
+import { CountryList } from "./components/CountryList";
 
 ReactDOM.render(
-  <Hello title="Countries" />,
-  document.getElementById("example")
+  <CountryList title="Countries" />,
+  document.getElementById("app")
 );

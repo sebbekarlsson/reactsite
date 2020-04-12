@@ -9,7 +9,7 @@ export interface MyProps {
 
 type MyState = { c: Country[] };
 
-export class Hello extends React.Component<MyProps, MyState>
+export class CountryList extends React.Component<MyProps, MyState>
 {
     constructor(props: MyProps)
     {
