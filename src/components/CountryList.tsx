@@ -7,23 +7,20 @@ export interface MyProps {
   title: string;
 }
 
-type MyState = { c: Country[] };
+type MyState = { countries: Country[] };
 
 export class CountryList extends React.Component<MyProps, MyState>
 {
     constructor(props: MyProps)
     {
         super(props);
-        this.state = {
-          c: []
-        };
+
+        this.state = {countries: []};
     }
 
     componentDidMount()
     {
-        API.getCountries((o: Country[]) => {
-            this.setState({ c: o });
-        });
+        API.getCountries((o: Country[]) => { this.setState({ countries: o }); });
     }
 
     render()
@@ -32,7 +29,7 @@ export class CountryList extends React.Component<MyProps, MyState>
             <div>
                 <h1>{ this.props.title }</h1>
                 <ul>
-                {this.state.c.map((item, index) => (
+                {this.state.countries.map((item, index) => (
                     <li key={ index }>{ item['name'] } ({ item['code'] })</li>
                 ))}
                 </ul>
